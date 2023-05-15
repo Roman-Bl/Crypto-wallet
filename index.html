@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Styles/style.css" />
+    <title>Token Interface</title>
+  </head>
+  <body>
+    <header class="nav-header glob-container">
+      <div>
+        <button id="generate-mnemonic">Generate mnemonic</button>
+        <input
+          type="password"
+          id="import-mnemonic"
+          type="text"
+          placeholder="Import mnemonic"
+        />
+      </div>
+      <div class="profile media">
+        <div class="media__body">
+          <p id="account-address">0x........</p>
+        </div>
+        <div class="media__image">
+          <img class="icon" src="images/circle-user.svg" alt="" />
+        </div>
+      </div>
+      <!-- <div class="nav"></div> -->
+    </header>
+    <section class="token-interface glob-container">
+      <div class="protocols">
+        <h2 class="title">Protocols</h2>
+        <ul class="protocols__container">
+          <!-- <li>BTC</li>
+          <li>ERC</li>
+          <li>ERC20</li>
+          <li>BEP20</li>
+          <li>Solana</li> -->
+          <li class="protocol" data-value="BTC">
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/bitcoin-btc-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>BTC</p>
+              </div>
+            </div>
+          </li>
+          <li class="protocol" data-value="LTC">
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/bitcoin-btc-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>LTC</p>
+              </div>
+            </div>
+          </li>
+          <li class="protocol protocol--active" data-value="ETH">
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/ethereum-eth-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>ETH</p>
+              </div>
+            </div>
+          </li>
+          <li class="protocol" data-value="ERC20">
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/ethereum-eth-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>ERC20</p>
+              </div>
+            </div>
+          </li>
+          <li class="protocol" data-value="BSC">
+            <div class="media">
+              <div class="media__image">
+                <img class="icon icon--primary" src="images/bnb-bnb-logo.svg" />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>BSC</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/solana-sol-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>Solana</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="media">
+              <div class="media__image">
+                <img
+                  class="icon icon--primary"
+                  src="images/polygon-matic-logo.svg"
+                />
+                <!-- <svg class="icon icon--primary">
+                  <use src="./images/polygon-matic-logo.svg"></use>
+                </svg> -->
+              </div>
+              <div class="media__body">
+                <p>Matic</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="balance">
+        <h2 class="title">Balance</h2>
+        <p>
+          <span class="currency-balance">---</span>
+          <span class="currency-symbol"></span>
+        </p>
+        <!-- <p id="converted">$28000</p> -->
+      </div>
+      <div class="history">
+        <h2 class="title">Transactions</h2>
+      </div>
+      <div class="receive-block">
+        <h2 class="title">Receive</h2>
+        <label for="wallet-address">Wallet address:</label> <br />
+        <!-- <input class="input"
+          type="text"
+          id="wallet-address"
+        /> -->
+        <p id="wallet-address"></p>
+      </div>
+      <div class="send-block">
+        <h2 class="title">Send</h2>
+        <form>
+          <label for="to">To:</label>
+          <input class="input" type="text" id="to" placeholder="Receiver" />
+          <label for="ammount">Ammount:</label>
+          <input
+            class="input"
+            type="number"
+            id="ammount"
+            placeholder="Enter ammount"
+          />
+          <button class="btn btn--send">Send</button>
+        </form>
+        <!-- <form>
+          <label for="to">To:</label> <br />
+          <input type="text" id="to" placeholder="Receiver" /> <br />
+          <label for="ammount">Ammount:</label> <br />
+          <input type="text" id="ammount" placeholder="Enter ammount" />
+          <button>Send</button>
+        </form> -->
+      </div>
+    </section>
+    <!-- <script src="./dist/main.js"></script> -->
+    <script src="src/index.js"></script>
+  </body>
+</html>
